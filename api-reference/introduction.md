@@ -1,0 +1,62 @@
+---
+title: "API Reference"
+description: "Complete API endpoint documentation"
+---
+
+# API Reference
+
+Welcome to the Movies API reference documentation.
+
+## Base URL
+
+```
+http://localhost:5065
+```
+
+## Available Endpoints
+
+### Movies Operations
+
+<CardGroup cols={2}>
+  <Card title="Get All Movies" icon="list" href="/api-reference/endpoints/get-all-movies">
+    Retrieve a paginated list of movies
+  </Card>
+  <Card title="Get Movie by ID" icon="film" href="/api-reference/endpoints/get-movie-by-id">
+    Get details of a specific movie
+  </Card>
+  <Card title="Create Movie" icon="plus" href="/api-reference/endpoints/create-movie">
+    Add a new movie to the database
+  </Card>
+  <Card title="Update Movie" icon="pen" href="/api-reference/endpoints/update-movie">
+    Modify an existing movie
+  </Card>
+  <Card title="Delete Movie" icon="trash" href="/api-reference/endpoints/delete-movie">
+    Remove a movie from the database
+  </Card>
+</CardGroup>
+
+## Response Format
+
+All API responses follow this structure:
+
+```json
+{
+  "success": boolean,
+  "message": "string",
+  "data": object | array,
+  "errors": array | null
+}
+```
+
+## Common Response Codes
+
+- **200 OK**: Request successful
+- **201 Created**: Resource created successfully
+- **204 No Content**: Resource deleted successfully
+- **400 Bad Request**: Invalid request data
+- **404 Not Found**: Resource not found
+- **500 Internal Server Error**: Server error
+
+## Interactive Testing
+
+Each endpoint page includes an interactive playground where you can test API calls directly from your browser.

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Payliance",
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#10b981",
+    "light": "#34d399",
+    "dark": "#059669",
+    "anchors": {
+      "from": "#10b981",
+      "to": "#34d399"
+    },
+    "background": {
+      "dark": "#0f172a"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:support@moviesapi.com"
+    }
+  ],
+  "tabs": [
+    {
+      "name": "API Reference",
+      "url": "api-reference"
+    },
+    {
+      "name": "SDKs",
+      "url": "sdk"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Get Started",
+      "pages": [
+        "introduction"
+      ]
+    },
+    {
+      "group": "Movies API",
+      "pages": [
+        "api-reference/endpoints/get-all-movies",
+        "api-reference/endpoints/get-movie-by-id",
+        "api-reference/endpoints/create-movie",
+        "api-reference/endpoints/update-movie",
+        "api-reference/endpoints/delete-movie"
+      ]
+    },
+    {
+      "group": "SDK",
+      "pages": [
+        "sdk/javascript",
+        "sdk/csharp"
+      ]
+    },
+    {
+      "group": "Support",
+      "pages": [
+        "support/errors"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "x": "https://x.com/moviesapi",
+    "github": "https://github.com/moviesapi",
+    "linkedin": "https://www.linkedin.com/company/moviesapi"
+  },
+  "api": {
+    "baseUrl": "http://localhost:5065",
+    "playground": {
+      "display": "interactive",
+      "proxy": false
+    }
+  }
+}
