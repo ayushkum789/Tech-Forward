@@ -1,7 +1,7 @@
 ---
 title: "Update Movie"
-api: "PUT http://localhost:5065/api/movies/{id}"
-description: "Updates all fields of an existing movie identified by ID. Provide the complete movie object in the request body."
+openapi: "openapi.json PUT /api/movies/{id}"
+description: "Updates an existing movie's information."
 ---
 
 Update an existing movie. This is a full update (PUT) - all fields must be provided.

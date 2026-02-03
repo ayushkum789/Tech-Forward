@@ -1,7 +1,7 @@
 ---
 title: "Get Movie by ID"
-api: "GET http://localhost:5065/api/movies/{id}"
-description: "Returns detailed information about a single movie identified by its unique ID."
+openapi: "openapi.json GET /api/movies/{id}"
+description: "Returns detailed information about a single movie."
 ---
 
 Retrieve a specific movie by its unique identifier.

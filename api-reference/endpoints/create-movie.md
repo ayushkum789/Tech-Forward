@@ -1,7 +1,7 @@
 ---
 title: "Create Movie"
-api: "POST http://localhost:5065/api/movies"
-description: "Creates a new movie entry in the database. The ID will be automatically generated."
+openapi: "openapi.json POST /api/movies"
+description: "Creates a new movie entry in the database."
 ---
 
 Create a new movie in the database. All fields are required.

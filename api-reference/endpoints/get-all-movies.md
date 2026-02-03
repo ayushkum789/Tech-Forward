@@ -1,7 +1,7 @@
 ---
 title: "Get All Movies"
-api: "GET http://localhost:5065/api/movies"
-description: "Returns a complete list of all movies in the database with their details including title, director, year, genre, and rating."
+openapi: "openapi.json GET /api/movies"
+description: "Returns a list of all movies from the database."
 ---
 
 Returns an array of all movies in the database.

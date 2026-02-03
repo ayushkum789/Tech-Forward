@@ -1,7 +1,7 @@
 ---
 title: "Delete Movie"
-api: "DELETE http://localhost:5065/api/movies/{id}"
-description: "Permanently removes a movie from the database identified by its ID."
+openapi: "openapi.json DELETE /api/movies/{id}"
+description: "Permanently removes a movie from the database."
 ---
 
 Delete a movie from the database. This operation is permanent and cannot be undone.

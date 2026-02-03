@@ -3,8 +3,6 @@ title: Movies API Platform
 description: "A simple, modern API for managing movie data"
 ---
 
-# Movies API Platform
-
 Welcome to the Movies API Platform – a simple, modern API for managing movie data. Test your endpoints, integrate with JavaScript, and build powerful movie applications.
 
 ## Overview

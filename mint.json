@@ -66,8 +66,8 @@
     "github": "https://github.com/moviesapi",
     "linkedin": "https://www.linkedin.com/company/moviesapi"
   },
+  "openapi": "openapi.json",
   "api": {
-    "baseUrl": "http://localhost:5065",
     "playground": {
       "display": "interactive",
       "proxy": false
