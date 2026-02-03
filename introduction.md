@@ -61,8 +61,8 @@ Get started with these five core operations:
 
 ## How It Works
 
-1. **Start Your API Server** - Run your Movies API on `http://localhost:5065`
-2. **Enable CORS** - Allow cross-origin requests from the documentation site
+1. **Access the API** - The Movies API is deployed at `https://tech-fwd-poc-production.up.railway.app`
+2. **Test Endpoints** - Use the interactive playground to make real API calls
 3. **Browse Documentation** - Explore all endpoints and examples
 4. **Test Interactively** - Use "Try It Out" to make real API calls
 5. **Integrate Your App** - Copy JavaScript examples and build your application

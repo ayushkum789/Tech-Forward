@@ -69,8 +69,7 @@
   "openapi": "openapi.json",
   "api": {
     "playground": {
-      "display": "interactive",
-      "proxy": false
+      "mode": "show"
     }
   }
 }

@@ -18,7 +18,7 @@ Get up and running with the Movies API quickly.
 Make your first API call to retrieve all movies:
 
 ```bash
-curl http://localhost:5065/movies
+curl https://tech-fwd-poc-production.up.railway.app/api/movies
 ```
 
 ## Next Steps
