@@ -50,8 +50,9 @@
     {
       "group": "SDK",
       "pages": [
+        "sdk/csharp",
         "sdk/javascript",
-        "sdk/csharp"
+        "sdk/python"
       ]
     },
     {

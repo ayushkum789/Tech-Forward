@@ -1,90 +1,55 @@
 ---
 title: "Python SDK"
-description: "Use the Movies API with Python"
+description: "Python SDK for backend services"
+icon: "python"
 ---
-
-# Python SDK
-
-Python client library for the Movies API.
 
 ## Installation
 
 ```bash
-pip install movies-api-client
+pip install api-client
 ```
 
 ## Quick Start
 
 ```python
-from movies_api import MoviesClient
+from api_client import APIClient
 
 # Initialize client
-client = MoviesClient(base_url="http://localhost:5065")
+client = APIClient(api_key="YOUR_API_KEY")
 
-# Get all movies
-movies = client.movies.get_all()
+# Get all resources
+resources = client.resources.get_all()
 
-# Get movie by ID
-movie = client.movies.get(1)
+# Get resource by ID
+resource = client.resources.get(1)
 
-# Create a movie
-new_movie = client.movies.create({
-    "title": "The Matrix",
-    "director": "Lana Wachowski",
-    "year": 1999,
-    "genre": "Sci-Fi",
-    "rating": 8.7
+# Create a resource
+new_resource = client.resources.create({
+    "name": "Sample Resource",
+    "value": 100
 })
-
-# Update a movie
-updated = client.movies.update(1, {
-    "rating": 9.0
-})
-
-# Delete a movie
-client.movies.delete(1)
-```
-
-## Configuration
-
-```python
-client = MoviesClient(
-    base_url="http://localhost:5065",
-    timeout=30,
-    verify_ssl=True
-)
 ```
 
 ## Error Handling
 
 ```python
-from movies_api.exceptions import MovieNotFound, ValidationError
+from api_client.exceptions import NotFoundError, ValidationError
 
 try:
-    movie = client.movies.get(999)
-except MovieNotFound:
-    print("Movie not found")
+    resource = client.resources.get(999)
+except NotFoundError:
+    print("Resource not found")
 except ValidationError as e:
     print(f"Validation error: {e}")
 ```
 
-## Async Support
+## Type Safety
 
 ```python
-from movies_api import AsyncMoviesClient
+from api_client.types import Resource
 
-async def main():
-    async with AsyncMoviesClient() as client:
-        movies = await client.movies.get_all()
-        print(movies)
-```
-
-## Type Hints
-
-```python
-from movies_api.types import Movie, CreateMovieInput
-
-def process_movie(movie: Movie) -> None:
-    print(f"Title: {movie.title}")
-    print(f"Director: {movie.director}")
+def process_resource(resource: Resource) -> None:
+    print(f"Name: {resource.name}")
+    print(f"Value: {resource.value}")
 ```

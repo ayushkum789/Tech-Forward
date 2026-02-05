@@ -1,34 +1,29 @@
 ---
 title: "SDK Overview"
-description: "Choose your preferred programming language"
+description: "Language-specific SDKs for faster best-practice development"
 ---
 
-# SDK Documentation
+# Language-Specific SDKs
 
-Integrate the Movies API into your application using our official SDKs.
+Seamless integration with standardized SDKs built for best-practice development patterns.
 
 ## Available SDKs
 
 <CardGroup cols={2}>
-  <Card title="JavaScript/TypeScript" icon="js" href="/sdk/javascript">
-    For Node.js and browser applications
+  <Card title="Python" icon="python" href="/sdk/python">
+    Python SDK for backend services
+  </Card>
+  <Card title="JavaScript/Node.js" icon="js" href="/sdk/javascript">
+    Node.js SDK for server-side applications
   </Card>
   <Card title="C# / .NET" icon="code" href="/sdk/csharp">
-    For .NET applications
+    .NET SDK for enterprise applications
   </Card>
 </CardGroup>
 
-## SDK Features
+## Key Benefits
 
-- **Type Safety**: Full TypeScript support
-- **Error Handling**: Built-in error types
-- **Async/Await**: Modern async patterns
-- **Lightweight**: Minimal dependencies
-
-## Community SDKs
-
-Looking for other languages? Check our community-maintained SDKs:
-
-- Python (Community)
-- Ruby (Community)
-- Go (Community)
+- **Faster Development**: Pre-built methods for all API endpoints
+- **Type Safety**: Full type definitions and IntelliSense support
+- **Error Handling**: Built-in error types and validation
+- **Best Practices**: Industry-standard patterns and conventions
