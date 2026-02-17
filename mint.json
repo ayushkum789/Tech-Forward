@@ -3,6 +3,7 @@
   "name": "Payliance",
   "theme": "prism",
   "favicon": "/favicon.png",
+  "basePath": "docs",
   "colors": {
     "primary": "#10b981",
     "light": "#34d399",
