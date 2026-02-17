@@ -7,12 +7,12 @@
   },
   "servers": [
     {
-      "url": "https://tech-fwd-poc-production.up.railway.app",
-      "description": "Production API Server"
+      "url": "https://jsonplaceholder.typicode.com",
+      "description": "JSONPlaceholder API Server"
     }
   ],
   "paths": {
-    "/api/movies": {
+    "/posts": {
       "get": {
         "summary": "Get All Movies",
         "description": "Retrieves a list of all movies",
@@ -61,7 +61,7 @@
         }
       }
     },
-    "/api/movies/{id}": {
+    "/posts/{id}": {
       "get": {
         "summary": "Get Movie by ID",
         "description": "Retrieves a specific movie by its unique identifier",

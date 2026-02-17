@@ -1,6 +1,6 @@
 ---
 title: "Update Movie"
-openapi: "openapi.json PUT /api/movies/{id}"
+openapi: "PUT /posts/{id}"
 description: "Updates an existing movie's information."
 ---
 

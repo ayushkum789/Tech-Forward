@@ -1,6 +1,6 @@
 ---
 title: "Create Movie"
-openapi: "openapi.json POST /api/movies"
+openapi: "POST /posts"
 description: "Creates a new movie entry in the database."
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Delete Movie"
-openapi: "openapi.json DELETE /api/movies/{id}"
+openapi: "DELETE /posts/{id}"
 description: "Permanently removes a movie from the database."
 ---
 

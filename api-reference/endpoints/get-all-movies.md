@@ -1,6 +1,6 @@
 ---
 title: "Get All Movies"
-openapi: "openapi.json GET /api/movies"
+openapi: "GET /posts"
 description: "Returns a list of all movies from the database."
 ---
 
