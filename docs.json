@@ -10,10 +10,7 @@
   "colors": {
     "primary": "#10b981",
     "light": "#34d399",
-    "dark": "#059669",
-    "background": {
-      "dark": "#0f172a"
-    }
+    "dark": "#059669"
   },
   "topbarLinks": [
     {
@@ -33,40 +30,47 @@
       "url": "https://mintlify.com/community"
     }
   ],
-  "navigation": [
-    {
-      "group": "Home",
-      "pages": ["introduction"]
-    },
-    {
-      "group": "API Reference",
-      "pages": [
-        "api-reference/introduction",
-        "api-reference/endpoints/get-all-movies",
-        "api-reference/endpoints/get-movie-by-id",
-        "api-reference/endpoints/create-movie",
-        "api-reference/endpoints/update-movie",
-        "api-reference/endpoints/delete-movie"
-      ]
-    },
-    {
-      "group": "SDK",
-      "pages": [
-        "sdk/introduction",
-        "sdk/csharp",
-        "sdk/javascript",
-        "sdk/python"
-      ]
-    },
-    {
-      "group": "Support",
-      "pages": [
-        "support/errors",
-        "support/faq",
-        "support/troubleshooting"
-      ]
-    }
-  ],
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Docs",
+        "groups": [
+          {
+            "group": "Home",
+            "pages": ["introduction"]
+          },
+          {
+            "group": "API Reference",
+            "pages": [
+              "api-reference/introduction",
+              "api-reference/endpoints/get-all-movies",
+              "api-reference/endpoints/get-movie-by-id",
+              "api-reference/endpoints/create-movie",
+              "api-reference/endpoints/update-movie",
+              "api-reference/endpoints/delete-movie"
+            ]
+          },
+          {
+            "group": "SDK",
+            "pages": [
+              "sdk/introduction",
+              "sdk/csharp",
+              "sdk/javascript",
+              "sdk/python"
+            ]
+          },
+          {
+            "group": "Support",
+            "pages": [
+              "support/errors",
+              "support/faq",
+              "support/troubleshooting"
+            ]
+          }
+        ]
+      }
+    ]
+  },
   "footerSocials": {
     "x": "https://x.com/moviesapi",
     "github": "https://github.com/moviesapi",
