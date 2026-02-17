@@ -1,6 +1,6 @@
 ---
 title: "Get Movie by ID"
-openapi: "openapi.json GET /api/movies/{id}"
+openapi: "GET /posts/{id}"
 description: "Returns detailed information about a single movie."
 ---
 
