@@ -55,11 +55,5 @@
     "x": "https://x.com/moviesapi",
     "github": "https://github.com/moviesapi",
     "linkedin": "https://www.linkedin.com/company/moviesapi"
-  },
-  "openapi": "openapi.json",
-  "api": {
-    "playground": {
-      "mode": "show"
-    }
   }
 }
