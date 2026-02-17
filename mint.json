@@ -21,34 +21,6 @@
       "pages": [
         "index"
       ]
-    },
-    {
-      "group": "API Reference",
-      "pages": [
-        "api-reference/introduction",
-        "api-reference/endpoints/get-all-movies",
-        "api-reference/endpoints/get-movie-by-id",
-        "api-reference/endpoints/create-movie",
-        "api-reference/endpoints/update-movie",
-        "api-reference/endpoints/delete-movie"
-      ]
-    },
-    {
-      "group": "SDKs",
-      "pages": [
-        "sdk/introduction",
-        "sdk/csharp",
-        "sdk/javascript",
-        "sdk/python"
-      ]
-    },
-    {
-      "group": "Support",
-      "pages": [
-        "support/errors",
-        "support/faq",
-        "support/troubleshooting"
-      ]
     }
   ],
   "footerSocials": {
