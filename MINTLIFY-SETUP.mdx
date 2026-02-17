@@ -1,0 +1,129 @@
+---
+title: Mintlify Deployment Guide
+description: Steps to successfully deploy documentation on Mintlify
+---
+
+## Prerequisites
+
+- Node.js v20 LTS (downgrade from v25+ if needed)
+- GitHub repository with documentation files
+- Mintlify account and dashboard access
+
+## Setup Steps
+
+### 1. **Create Configuration File**
+   - Create `docs.json` in the **root directory** (not a subfolder)
+   - Include required fields: `name`, `theme`, `favicon`, `navigation`
+
+### 2. **Use Correct Theme**
+   - Valid themes: `mint`, `maple`, `palm`, `willow`, `linden`, `almond`, `aspen`, `sequoia`
+   - Example: `"theme": "mint"`
+
+### 3. **Configure Navigation**
+   - Use **object format with tabs**, not array format
+   - Structure:
+     ```json
+     "navigation": {
+       "tabs": [
+         {
+           "tab": "Docs",
+           "groups": [
+             {
+               "group": "Group Name",
+               "pages": ["path/to/page"]
+             }
+           ]
+         }
+       ]
+     }
+     ```
+
+### 4. **File Structure**
+   - Keep all `.mdx` files in **root or subdirectories** (e.g., `api-reference/`, `sdk/`)
+   - Do NOT create a `docs` folder
+   - Files must have frontmatter with `title`:
+     ```mdx
+     ---
+     title: "Page Title"
+     description: "Optional description"
+     ---
+     ```
+
+### 5. **Colors Configuration**
+   - Only use: `primary`, `light`, `dark`
+   - Remove `background` (not supported)
+   - Example:
+     ```json
+     "colors": {
+       "primary": "#10b981",
+       "light": "#34d399",
+       "dark": "#059669"
+     }
+     ```
+
+### 6. **Required Fields in docs.json**
+   - ✅ `name` - Project name
+   - ✅ `theme` - One of the valid themes
+   - ✅ `favicon` - Path to favicon file
+   - ✅ `navigation` - Navigation structure with tabs and groups
+   - ✅ `colors` - Primary, light, and dark hex colors
+
+### 7. **Deploy via GitHub**
+   - Push changes to GitHub repository
+   - Install Mintlify GitHub App from dashboard
+   - Site deploys automatically on every push
+
+### 8. **Access Your Documentation**
+   - Default URL: `https://<project-id>.mintlify.app`
+   - Custom domain: Set up in dashboard settings
+
+## Common Mistakes to Avoid
+
+❌ Using `mint.json` instead of `docs.json`
+❌ Creating a `docs/` folder for files
+❌ Navigation as array instead of object with tabs
+❌ Invalid theme names
+❌ Including `background` in colors object
+❌ Missing `title` in file frontmatter
+❌ Using Node v25+ (must use v20 LTS)
+
+## File Example Structure
+
+```
+your-repo/
+├── docs.json              # Configuration file (ROOT)
+├── favicon.png
+├── introduction.mdx
+├── api-reference/
+│   ├── introduction.mdx
+│   └── endpoints/
+│       ├── get-all.mdx
+│       ├── create.mdx
+│       └── delete.mdx
+├── sdk/
+│   ├── introduction.mdx
+│   ├── javascript.mdx
+│   ├── python.mdx
+│   └── csharp.mdx
+└── support/
+    ├── errors.mdx
+    ├── faq.mdx
+    └── troubleshooting.mdx
+```
+
+## Quick Reference
+
+| Field | Type | Required | Notes |
+|-------|------|----------|-------|
+| `name` | string | ✅ | Project name |
+| `theme` | string | ✅ | One of 8 valid themes |
+| `favicon` | string | ✅ | Path to favicon file |
+| `navigation` | object | ✅ | Must have `tabs` with `groups` |
+| `colors` | object | ✅ | primary, light, dark only |
+| `logo` | object | ❌ | Optional logo paths |
+| `topbarLinks` | array | ❌ | Optional top navigation links |
+| `footerSocials` | object | ❌ | Optional social media links |
+
+---
+
+**Result**: Fully working Mintlify documentation site! 🚀
