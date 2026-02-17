@@ -15,26 +15,17 @@
       "url": "mailto:support@moviesapi.com"
     }
   ],
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    },
-    {
-      "name": "SDKs",
-      "url": "sdk"
-    }
-  ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Home",
       "pages": [
         "introduction"
       ]
     },
     {
-      "group": "Movies API",
+      "group": "API Reference",
       "pages": [
+        "api-reference/introduction",
         "api-reference/endpoints/get-all-movies",
         "api-reference/endpoints/get-movie-by-id",
         "api-reference/endpoints/create-movie",
@@ -43,8 +34,9 @@
       ]
     },
     {
-      "group": "SDK",
+      "group": "SDKs",
       "pages": [
+        "sdk/introduction",
         "sdk/csharp",
         "sdk/javascript",
         "sdk/python"
@@ -53,7 +45,9 @@
     {
       "group": "Support",
       "pages": [
-        "support/errors"
+        "support/errors",
+        "support/faq",
+        "support/troubleshooting"
       ]
     }
   ],
