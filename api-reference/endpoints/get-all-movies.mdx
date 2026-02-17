@@ -98,60 +98,7 @@ Status Code: `500 Internal Server Error`
 • Export movie data for reporting
 • Populate dropdown lists or selection menus
 
-## Code Examples
 
-### C#
-
-```csharp
-using var client = new MovieApiClient("https://tech-fwd-poc-production.up.railway.app");
-
-var movies = await client.GetAllMoviesAsync();
-
-Console.WriteLine("All Movies:");
-foreach (var movie in movies ?? new List<Movie>())
-{
-    Console.WriteLine($"[{movie.Id}] {movie.Title} ({movie.Year}) - {movie.Director} - Rating: {movie.Rating}");
-}
-```
-
-### JavaScript
-
-```javascript
-const response = await fetch(
-  "https://tech-fwd-poc-production.up.railway.app/api/movies",
-  {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  },
-);
-
-const movies = await response.json();
-
-movies.forEach((movie) => {
-  console.log(`${movie.title} (${movie.year}) - ${movie.rating}/10`);
-});
-```
-
-### Python
-
-```python
-import requests
-
-response = requests.get(
-    "https://tech-fwd-poc-production.up.railway.app/api/movies",
-    headers={"Content-Type": "application/json"}
-)
-
-if response.status_code == 200:
-    movies = response.json()
-
-    for movie in movies:
-        print(f"{movie['title']} ({movie['year']}) - {movie['rating']}/10")
-else:
-    print(f"Error: {response.status_code}")
-```
 
 ## Related Endpoints
 

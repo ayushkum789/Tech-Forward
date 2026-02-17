@@ -72,75 +72,7 @@ Status Code: `500 Internal Server Error`
 • Implement administrative deletion features
 • Maintain database integrity by removing invalid data
 
-## Code Examples
 
-### C#
-
-```csharp
-using var client = new MovieApiClient("https://tech-fwd-poc-production.up.railway.app");
-
-int movieIdToDelete = 5;
-
-try
-{
-    await client.DeleteMovieAsync(movieIdToDelete);
-    Console.WriteLine($"Movie with ID {movieIdToDelete} has been successfully deleted.");
-}
-catch (MovieNotFoundException ex)
-{
-    Console.WriteLine($"Error: Movie not found - {ex.Message}");
-}
-catch (Exception ex)
-{
-    Console.WriteLine($"Error deleting movie: {ex.Message}");
-}
-```
-
-### JavaScript
-
-```javascript
-const movieId = 5;
-
-const response = await fetch(
-  `https://tech-fwd-poc-production.up.railway.app/api/movies/${movieId}`,
-  {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  },
-);
-
-if (response.status === 204) {
-  console.log(`Movie with ID ${movieId} has been successfully deleted.`);
-} else if (response.status === 404) {
-  const error = await response.json();
-  console.error("Movie not found:", error.message);
-} else {
-  console.error("Failed to delete movie");
-}
-```
-
-### Python
-
-```python
-import requests
-
-movie_id = 5
-
-response = requests.delete(
-    f"https://tech-fwd-poc-production.up.railway.app/api/movies/{movie_id}",
-    headers={"Content-Type": "application/json"}
-)
-
-if response.status_code == 204:
-    print(f"Movie with ID {movie_id} has been successfully deleted.")
-elif response.status_code == 404:
-    error = response.json()
-    print(f"Error: Movie not found - {error['message']}")
-else:
-    print(f"Error deleting movie: {response.status_code}")
-```
 
 ## Related Endpoints
 

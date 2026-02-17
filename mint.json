@@ -9,12 +9,51 @@
     "light": "#34d399",
     "dark": "#059669"
   },
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:support@moviesapi.com"
+    }
+  ],
   "navigation": [
     {
-      "group": "Documentation",
+      "group": "Home",
       "pages": [
         "index"
       ]
+    },
+    {
+      "group": "API Reference",
+      "pages": [
+        "api-reference/introduction",
+        "api-reference/endpoints/get-all-movies",
+        "api-reference/endpoints/get-movie-by-id",
+        "api-reference/endpoints/create-movie",
+        "api-reference/endpoints/update-movie",
+        "api-reference/endpoints/delete-movie"
+      ]
+    },
+    {
+      "group": "SDKs",
+      "pages": [
+        "sdk/introduction",
+        "sdk/csharp",
+        "sdk/javascript",
+        "sdk/python"
+      ]
+    },
+    {
+      "group": "Support",
+      "pages": [
+        "support/errors",
+        "support/faq",
+        "support/troubleshooting"
+      ]
     }
-  ]
+  ],
+  "footerSocials": {
+    "x": "https://x.com/moviesapi",
+    "github": "https://github.com/moviesapi",
+    "linkedin": "https://www.linkedin.com/company/moviesapi"
+  }
 }
