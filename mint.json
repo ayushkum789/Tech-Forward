@@ -3,6 +3,12 @@
   "name": "Payliance",
   "description": "Movies API Documentation",
   "theme": "prism",
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#10b981",
+    "light": "#34d399",
+    "dark": "#059669"
+  },
   "navigation": [
     {
       "group": "Documentation",
