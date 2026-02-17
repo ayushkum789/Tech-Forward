@@ -40,6 +40,10 @@
             "pages": ["introduction"]
           },
           {
+            "group": "Getting Started",
+            "pages": ["MINTLIFY-SETUP"]
+          },
+          {
             "group": "API Reference",
             "pages": [
               "api-reference/introduction",
