@@ -55,7 +55,8 @@
               "api-reference/endpoints/get-movie-by-id",
               "api-reference/endpoints/create-movie",
               "api-reference/endpoints/update-movie",
-              "api-reference/endpoints/delete-movie"
+              "api-reference/endpoints/delete-movie",
+              "api-reference/endpoints/debit-method"
             ]
           },
           {
