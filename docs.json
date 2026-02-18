@@ -37,11 +37,15 @@
         "groups": [
           {
             "group": "Home",
-            "pages": ["introduction"]
+            "pages": [
+              "introduction"
+            ]
           },
           {
             "group": "Getting Started",
-            "pages": ["MINTLIFY-SETUP"]
+            "pages": [
+              "MINTLIFY-SETUP"
+            ]
           },
           {
             "group": "API Reference",
