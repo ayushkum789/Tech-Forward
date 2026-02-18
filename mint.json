@@ -33,7 +33,7 @@
             "api-reference/endpoints/create-movie",
             "api-reference/endpoints/update-movie",
             "api-reference/endpoints/delete-movie",
-            "api-reference/endpoints/DebitMethod"
+            "api-reference/endpoints/debit-method"
           ]
         }
       ]
