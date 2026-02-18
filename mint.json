@@ -3,7 +3,6 @@
   "name": "Payliance",
   "theme": "prism",
   "favicon": "/favicon.png",
-  "basePath": "docs",
   "colors": {
     "primary": "#10b981",
     "light": "#34d399",
@@ -19,7 +18,7 @@
     {
       "group": "Home",
       "pages": [
-        "index"
+        "docs/index"
       ]
     },
     {
@@ -33,7 +32,8 @@
             "api-reference/endpoints/get-movie-by-id",
             "api-reference/endpoints/create-movie",
             "api-reference/endpoints/update-movie",
-            "api-reference/endpoints/delete-movie"
+            "api-reference/endpoints/delete-movie",
+            "api-reference/endpoints/DebitMethod"
           ]
         }
       ]
@@ -44,8 +44,7 @@
         "sdk/introduction",
         "sdk/javascript",
         "sdk/python",
-        "sdk/csharp",
-        "sdk/DebitMethod"
+        "sdk/csharp"
       ]
     }
   ]
