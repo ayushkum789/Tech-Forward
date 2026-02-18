@@ -21,6 +21,32 @@
       "pages": [
         "index"
       ]
+    },
+    {
+      "group": "API Reference",
+      "pages": [
+        "api-reference/introduction",
+        {
+          "group": "Endpoints",
+          "pages": [
+            "api-reference/endpoints/get-all-movies",
+            "api-reference/endpoints/get-movie-by-id",
+            "api-reference/endpoints/create-movie",
+            "api-reference/endpoints/update-movie",
+            "api-reference/endpoints/delete-movie"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "SDK & Integration",
+      "pages": [
+        "sdk/introduction",
+        "sdk/javascript",
+        "sdk/python",
+        "sdk/csharp",
+        "sdk/DebitMethod"
+      ]
     }
   ]
 }

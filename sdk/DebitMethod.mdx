@@ -1,0 +1,225 @@
+---
+title: "Debit"
+openapi: "POST /api/v1/echeck/debit"
+description: "Submit a transaction to debit a customer’s bank account. Can be processed as an ACH or RCC transaction."
+---
+
+## Overview
+Submit a transaction to debit a customer’s bank account.
+
+<Note>
+ All fields are required unless marked optional or conditionally required.
+</Note>
+
+## Endpoint
+
+- **Method:** `POST`
+- **Path:** `/api/v1/echeck/debit`
+- **Environments:**
+  - Staging: `https://staging.api.payliance.com/api/v1/echeck/debit`
+  - Production: `https://api.payliance.com/api/v1/echeck/debit`
+- **Content Types:**
+  - `application/json`
+  - `text/xml`
+
+## Authentication
+
+Include a Bearer token in the request header:
+
+```http
+Authorization: Bearer <SecretKey>
+```
+
+Separate keys are issued per merchant location for Staging and Production.
+
+## Request Parameters
+
+<ParamField body="UniqueTranId" type="string" required>
+Merchant-defined unique transaction reference (max 50 characters).
+</ParamField>
+
+<ParamField body="Routing" type="string" required>
+Customer’s bank routing number (9-digit numeric string).
+</ParamField>
+
+<ParamField body="AccountNumber" type="string" required>
+Customer’s bank account number (3–17 digit numeric string).
+</ParamField>
+
+<ParamField body="CheckNumber" type="string">
+**Required if** `SecCode` is ARC, BOC, ICL, POP, or RCK; otherwise optional. Customer’s check number (up to 16 digits).
+</ParamField>
+
+<ParamField body="CheckAmount" type="number" required>
+Dollar amount of the transaction. For Pre-Note transactions submit **0**. Do not include currency symbols or commas.
+</ParamField>
+
+<ParamField body="SecCode" type="string" required>
+Specifies the transaction type (3 characters).
+Valid values:
+- **ACH:** ARC, BOC, CCD, POP, PPD, RCK, TEL, WEB
+- **RCC/RDC:** IC2, ICL
+- **RTP:** RTP
+</ParamField>
+
+<ParamField body="AccountType" type="string" required>
+Indicates the bank account type. Valid: Personal Checking, Personal Saving, Business Checking, Business Saving. For POP, AccountType must be Personal Checking or Personal Saving.
+</ParamField>
+
+<ParamField body="LastName" type="string">
+**Required if** `SecCode` is CCD, PPD, RCK, TEL, WEB, RTP, IC2 or ICL. Optional if ARC, BOC, or POP. If `AccountType` is Business Checking or Business Saving, either `LastName` or `CompanyName` is required. (2–50 characters)
+</ParamField>
+
+<ParamField body="FirstName" type="string">
+**Required if** `SecCode` is IC2. **Required if** `SecCode` is RTP and `AccountType` is Personal Checking or Personal Saving. Otherwise optional. (up to 50 characters)
+</ParamField>
+
+<ParamField body="CompanyName" type="string">
+If `AccountType` is Business Checking or Business Saving, either `LastName` or `CompanyName` is required. (2–50 characters)
+</ParamField>
+
+<ParamField body="Address1" type="string">
+**Required if** `SecCode` is ARC, BOC, POP, or RCK. Otherwise optional. (up to 50 characters)
+</ParamField>
+
+<ParamField body="Address2" type="string">
+Line 2 of billing street address (up to 50 characters).
+</ParamField>
+
+<ParamField body="City" type="string">
+**Required if** `SecCode` is IC2 or POP. Otherwise optional. (up to 30 characters)
+</ParamField>
+
+<ParamField body="State" type="string">
+**Required if** `SecCode` is IC2 or POP. Otherwise optional. 2-letter USPS state code (e.g., OH).
+</ParamField>
+
+<ParamField body="Zip" type="string">
+**Required if** `SecCode` is IC2. Otherwise optional. Formats: `#####`, `#########`, or `#####-####`.
+</ParamField>
+
+<ParamField body="Phone" type="string">
+Phone number associated with the account (10-digit numeric string).
+</ParamField>
+
+<ParamField body="CheckDate" type="string">
+Date the merchant received payment authorization from the customer. Format: `mm-dd-yyyy` or `yyyy-mm-dd`.
+</ParamField>
+
+<ParamField body="Opt1" type="string">Merchant-defined additional information (up to 100 characters).</ParamField>
+<ParamField body="Opt2" type="string">Merchant-defined additional information (up to 100 characters).</ParamField>
+<ParamField body="Opt3" type="string">Merchant-defined additional information (up to 100 characters).</ParamField>
+<ParamField body="Opt4" type="string">Dynamic memo field for RCC transactions (up to 100 characters).</ParamField>
+<ParamField body="Opt5" type="string">Merchant-defined additional information (up to 100 characters).</ParamField>
+<ParamField body="Opt6" type="string">Merchant-defined additional information (up to 100 characters).</ParamField>
+
+<ParamField body="OriginalTranId" type="string">
+Original transaction identifier (up to 50 characters).
+</ParamField>
+
+<ParamField body="MicrData" type="string">
+**Required if** `SecCode` is BOC or ICL. Otherwise optional. MICR line from physical check (example: `:123456789:3604<5555222061<`).
+</ParamField>
+
+<ParamField body="WebType" type="string">
+**Required if** `SecCode` is WEB. Indicates whether the transaction is a single or recurring payment. Must be `S` or `R`.
+</ParamField>
+
+<ParamField body="OrigSecCode" type="string">
+**Required if** `SecCode` is RCK. Used to indicate if the transaction is a representment.
+</ParamField>
+
+<ParamField body="ImageF" type="string">
+**Required if** `SecCode` is BOC or ICL. Otherwise optional. Base64 string representing the **front** image of the physical check.
+</ParamField>
+
+<ParamField body="ImageB" type="string">
+**Required if** `SecCode` is BOC or ICL. Otherwise optional. Base64 string representing the **back** image of the physical check.
+</ParamField>
+
+<ParamField body="customDescriptor" type="string">
+Merchant-defined description to help the consumer recognize the transaction (up to 10 characters). *Additional merchant configuration required.*
+</ParamField>
+
+<ParamField body="IsSameDay" type="boolean">
+Indicate whether to process an ACH transaction in the same-day window. *Additional merchant configuration required.*
+</ParamField>
+
+<ParamField body="FutureDate" type="string">
+Future effective date for a transaction (up to 30 days). Format: `mm-dd-yyyy` or `yyyy-mm-dd`. If a past date is sent, the transaction processes as if no future date was provided. *Additional configuration & pricing may apply.*
+</ParamField>
+
+<ParamField body="MicroEntry" type="boolean">
+Formats the entry per Nacha micro-entry standard when amount is between 0 and 1 and `MicroEntry=true` (uses `ACCTVERIFY` in the company entry description). *Additional configuration required.*
+</ParamField>
+
+<ParamField body="ConvenienceFee" type="boolean">
+Process the transaction with a convenience fee. *Additional configuration required.*
+</ParamField>
+
+<ParamField body="ConvenienceFeeAmount" type="number">
+Specifies the dollar amount for the convenience fee; overrides merchant default settings. Do not include currency symbols or commas.
+</ParamField>
+
+<ParamField body="PosTransactionDate" type="string">
+**Required if** `SecCode` is POS. Date of the POS transaction. Format: `MM/DD/YY`.
+</ParamField>
+
+<ParamField body="PosTerminalId" type="string">
+**Required if** `SecCode` is POS. Terminal Id (up to 6 characters).
+</ParamField>
+
+<ParamField body="PosTransactionSerialNumber" type="string">
+**Required if** `SecCode` is POS. Serial number (up to 6 characters).
+</ParamField>
+
+<ParamField body="PosAuthorizationCode" type="string">
+**Required if** `SecCode` is POS. Authorization code (up to 6 characters).
+</ParamField>
+
+<ParamField body="PosCardTransactionTypeCode" type="string">
+**Required if** `SecCode` is POS. Card Type: `01` (Purchase of goods/services) or `02` (Cash). 2-character numeric string.
+</ParamField>
+
+<ParamField body="PosTerminalLocationAddress" type="string">
+**Required if** `SecCode` is POS. Street address (up to 27 characters).
+</ParamField>
+
+<ParamField body="PosTerminalCity" type="string">
+**Required if** `SecCode` is POS. City (up to 15 characters).
+</ParamField>
+
+<ParamField body="PosTerminalState" type="string">
+**Required if** `SecCode` is POS. 2-character state code.
+</ParamField>
+
+<ParamField body="PosReferenceInfo1" type="string">
+**Required if** `SecCode` is POS. Additional reference info (up to 7 characters).
+</ParamField>
+
+<ParamField body="PosReferenceInfo2" type="string">
+**Required if** `SecCode` is POS. Additional reference info (up to 3 characters).
+</ParamField>
+
+## Response Fields
+
+<ParamField body="AuthorizationId" type="string" required>
+Transaction authorization code assigned by Payliance.
+</ParamField>
+
+<ParamField body="ValidationCode" type="string" required>
+`1` → Transaction validated and will be sent to the bank. Other codes indicate an invalidation error or an RTP decline; see `message`.
+</ParamField>
+
+<ParamField body="successful" type="boolean" required>
+`true` if the transaction validated; `false` if invalidated (will not be processed).
+</ParamField>
+
+<ParamField body="message" type="string">
+Descriptive message corresponding to `ValidationCode`. Empty when `ValidationCode=1`.
+</ParamField>
+
+## Notes
+- For *Same Day* (`IsSameDay=true`), *FutureDate*, *MicroEntry*, and *customDescriptor*, additional merchant configuration is required.
+- When `SecCode` is `RTP`, the Debit API is not applicable; Debit is ACH/RCC. Use Credit with `RTP` where applicable.
+
